@@ -1,0 +1,19 @@
+vite-react-auth/
+├── public/
+├── src/
+│   ├── components/
+│   │   └── LoginForm.tsx
+│   ├── context/
+│   │   └── AuthContext.tsx
+│   ├── pages/
+│   │   ├── Home.tsx
+│   │   └── Protected.tsx
+│   ├── App.tsx
+│   ├── main.tsx
+├── index.html
+├── package.json
+├── tsconfig.json
+├── Dockerfile
+└── docker-compose.yml
+
+ToDo: criar o layout usando tailwindcss no login e menu, analisar usar react-router
