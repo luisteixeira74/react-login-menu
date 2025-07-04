@@ -1,6 +1,6 @@
 # React Shopping + API com MySQL e Autenticação Simples
 
-Este projeto é uma aplicação de exemplo que integra um frontend React com backend Node.js, utilizando um banco de dados MySQL para armazenar produtos. 
+Este projeto é uma aplicação de exemplo que integra um frontend React com backend Node.js, utilizando um banco de dados MySQL para armazenar produtos.
 
 ---
 
@@ -29,3 +29,12 @@ Este projeto é uma aplicação de exemplo que integra um frontend React com bac
 
 ```bash
 docker compose up --build
+```
+
+4. Acesse:
+
+```bash
+http://localhost:3000/
+```
+
+---

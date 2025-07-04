@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { useEffect, useState } from 'react';
-import api, { } from '../api/api'
+import api from '../api/api';
 import { ProductGrid } from '../components/ProductGrid';
 import ReactPaginate from 'react-paginate';
 
@@ -21,10 +21,11 @@ export function ShoppingPage() {
   const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
-  api.get<Product[]>('http://localhost:4000/products')
-    .then(res => setProducts(res.data))
-    .catch(err => console.error('Erro:', err));
-}, []);
+    api
+      .get<Product[]>('http://localhost:4000/products')
+      .then((res) => setProducts(res.data))
+      .catch((err) => console.error('Erro:', err));
+  }, []);
 
   const handlePageClick = (selectedItem: { selected: number }) => {
     setCurrentPage(selectedItem.selected);
@@ -32,32 +33,49 @@ export function ShoppingPage() {
 
   const offset = currentPage * ITEMS_PER_PAGE;
   const currentItems = products.slice(offset, offset + ITEMS_PER_PAGE);
-  
+
+  const paginateStyles = {
+    container: 'flex justify-center space-x-2 mt-6',
+    page: 'w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-white bg-gray-700 hover:bg-gray-600 cursor-pointer',
+    active: 'bg-white text-black border-white font-semibold',
+    arrow:
+      'w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-white hover:bg-gray-600',
+    disabled: 'opacity-40 cursor-not-allowed',
+    break:
+      'w-10 h-10 flex items-center justify-center rounded-full text-gray-400',
+  };
+
   return (
-     <div className="w-full h-[calc(100vh-250px)] bg-gray-800 p-4">
+    <div className="w-full h-[calc(100vh-250px)] mt-[196px]">
       {isAuthenticated ? (
         <>
           <h1 className="text-white font-inter mb-6">Shopping Page</h1>
           <ProductGrid products={currentItems} />
 
           <ReactPaginate
-            previousLabel={'← Anterior'}
-            nextLabel={'Próximo →'}
-            pageCount={Math.ceil(products.length / ITEMS_PER_PAGE)}
+            previousLabel="←"
+            nextLabel="→"
             onPageChange={handlePageClick}
-            containerClassName={'flex justify-center space-x-2 mt-6'}
-            pageClassName={'px-3 py-1 border rounded cursor-pointer'}
-            activeClassName={'bg-blue-500 text-white'}
-            disabledClassName={'opacity-50 cursor-not-allowed'}
+            pageCount={Math.ceil(products.length / ITEMS_PER_PAGE)}
+            containerClassName={paginateStyles.container}
+            pageClassName={paginateStyles.page}
+            activeClassName={paginateStyles.active}
+            previousClassName={paginateStyles.arrow}
+            nextClassName={paginateStyles.arrow}
+            disabledClassName={paginateStyles.disabled}
+            breakClassName={paginateStyles.break}
+            breakLabel="..."
           />
         </>
       ) : (
-        <>
-        <div className="text-white text-3xl font-inter">Para visualizar os produtos você precisa estar logado.</div>
-        <Link to="/login" className="text-blue-500 hover:underline mt-4">
-          Fazer Login
-        </Link>
-        </>
+        <div className="flex flex-col items-center justify-center h-full">
+          <div className="text-white text-3xl font-inter">
+            Para visualizar os produtos você precisa estar logado.
+          </div>
+          <Link to="/login" className="text-blue-500 hover:underline mt-4">
+            Fazer Login
+          </Link>
+        </div>
       )}
     </div>
   );

@@ -6,7 +6,6 @@ export function MainLayout() {
     <div className="min-h-screen w-full bg-[#1E1E1E] flex items-center justify-center overflow-hidden">
       {/* Div arredondada com fundo principal */}
       <div className="w-[1440px] h-[1024px] mx-auto relative overflow-hidden bg-[#2E2E2D] rounded-[48px]">
-        
         <Header />
 
         {/* Elipses decorativas */}
