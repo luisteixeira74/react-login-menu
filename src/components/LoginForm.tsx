@@ -45,7 +45,16 @@ export function LoginForm() {
   return (
     <>
     
-        {/* Título LOGIN */}
+       <div
+        className="z-10 flex flex-col items-center p-8"
+        style={{
+          width: '553px',
+          height: '440px',
+          backgroundColor: '#909090',
+          borderRadius: '42px',
+        }}
+      >
+        
         <h1
         className="absolute text-black font-regular mt-4"
         style={{
@@ -92,6 +101,7 @@ export function LoginForm() {
             <AgreeCheckbox />
 
         </form>
+        </div>
     </>
   );
 }

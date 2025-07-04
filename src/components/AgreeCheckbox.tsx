@@ -11,8 +11,8 @@ export function AgreeCheckbox({ text = 'Clique para concordar com os termos' }: 
     <div
       className="absolute flex items-start"
       style={{
-        top: '660px',
-        left: '476px',
+        top: '480px',
+        left: '496px',
         width: '365px',
         height: '34px',
       }}

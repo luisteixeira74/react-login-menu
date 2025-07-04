@@ -5,8 +5,8 @@ export function InputSenha(props: InputProps) {
     <div
   className="absolute flex flex-col"
   style={{
-    top: '489px',
-    left: '412px',
+    top: '300px',
+    left: '440px',
   }}
 >
     <input

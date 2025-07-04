@@ -5,12 +5,12 @@ export function InputEmail(props: InputProps) {
     <div
   className="absolute flex flex-col"
   style={{
-    top: '399px',
-    left: '412px',
+    top: '220px',
+    left: '440px',
   }}
 >
     <input
-    type="email"
+    type="text"
     placeholder="E-MAIL"
     className="w-[398px] h-[49px] px-4 text-white placeholder-white-600 focus:outline-none"
     style={{
