@@ -5,6 +5,32 @@ services:
     build: .
     ports:
       - "3000:80"
+    environment:
+      - VITE_API_URL=http://api:4000
+    depends_on:
+      - api
+
+  api:
+    container_name: react-login-menu-api
+    build: ./backend
+    ports:
+      - "4000:4000"
+    environment:
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASSWORD: root
+      DB_NAME: shopping
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: shopping-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: shopping
+    ports:
+      - "3306:3306"
     volumes:
-      - .:/app
-    restart: unless-stopped
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql

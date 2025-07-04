@@ -30,7 +30,7 @@ export function LoginForm() {
 
   if (isAuthenticated) {
     return (
-      <div className="text-white text-center">
+      <div className="text-white text-center font-inter size-[24px]">
         <p className="mb-4">Você está logado!</p>
         <button
           onClick={handleLogout}

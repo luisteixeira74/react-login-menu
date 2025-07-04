@@ -5,8 +5,8 @@ import { useAuth  } from '../hooks/useAuth'
 
 export function Header() {
   
-  const { isAuthenticated, logout } = useAuth();
-  const userEmail = "teste@teste.com";
+  const { isAuthenticated, email, logout } = useAuth();
+  const userEmail = email? email : 'Visitante';
 
   const handleLogout = () => {
     logout();
@@ -21,14 +21,8 @@ export function Header() {
 
       {/* Menu de links alinhados verticalmente ao centro */}
       <nav className="flex items-center space-x-10 text-white text-[24px] font-inter">
-        <Link to="/men" className="hover:text-gray-300 transition-colors cursor-pointer">
+        <Link to="/shopping" className="hover:text-gray-300 transition-colors cursor-pointer">
             MEN
-        </Link>
-        <Link to="/women" className="hover:text-gray-300 transition-colors cursor-pointer">
-            WOMEN
-        </Link>
-        <Link to="/kids" className="hover:text-gray-300 transition-colors cursor-pointer">
-            KIDS
         </Link>
 
         <SearchInput />
