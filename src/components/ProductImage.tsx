@@ -2,14 +2,15 @@ interface ProductProps {
   id: number;
   name: string;
   price: number;
+  image_url: string;
 }
 
-export function ProductCard({id, name, price }: ProductProps) {
+export function ProductImage({name, price, image_url }: ProductProps) {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-2">
       <img
         className="w-full h-48 object-cover"
-        src={`https://source.unsplash.com/random/300x200?product&sig=${id}`}
+        src={image_url}
         alt={name}
       />
       <div className="px-6 py-4">

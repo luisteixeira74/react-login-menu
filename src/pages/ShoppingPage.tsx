@@ -10,6 +10,7 @@ interface Product {
   name: string;
   price: number;
   active: boolean;
+  image_url: string;
 }
 
 const ITEMS_PER_PAGE = 8;
@@ -36,7 +37,7 @@ export function ShoppingPage() {
      <div className="w-full h-[calc(100vh-250px)] bg-gray-800 p-4">
       {isAuthenticated ? (
         <>
-          <h1 className="text-white text-3xl font-inter mb-6">Shopping Page</h1>
+          <h1 className="text-white font-inter mb-6">Shopping Page</h1>
           <ProductGrid products={currentItems} />
 
           <ReactPaginate

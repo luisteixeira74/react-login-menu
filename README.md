@@ -8,8 +8,6 @@ Este projeto é uma aplicação de exemplo que integra um frontend React com bac
 
 - Listagem de produtos com paginação simples.
 - Controle básico de autenticação via Context API no React.
-- Backend Node.js com API REST para consultar produtos do MySQL.
-- Banco MySQL rodando em container Docker com dados iniciais populados.
 - Frontend React consumindo a API via Axios.
 - Layout responsivo usando Tailwind CSS.
 
@@ -19,7 +17,7 @@ Este projeto é uma aplicação de exemplo que integra um frontend React com bac
 
 - **Ainda não há tabela de usuários nem cadastro.**
 - O sistema utiliza dados fixos para login comentados no arquivo `.env.example`.
-- É necessário copiar o `.env.example` para `.env` e ajustar as variáveis de ambiente.
+- É necessário copiar o `.env.example` para `.env` e ajustar variáveis de ambiente.
 
 ---
 

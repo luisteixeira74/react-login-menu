@@ -1,10 +1,11 @@
-import { ProductCard } from './ProductCard';
+import { ProductImage } from './ProductImage'
 
 interface Product {
   id: number;
   name: string;
   price: number;
   active: boolean;
+  image_url: string;
 }
 
 interface ProductGridProps {
@@ -17,11 +18,8 @@ export function ProductGrid({ products }: ProductGridProps) {
   return (
     <div className="grid grid-cols-4 gap-4">
       {visibleProducts.map((product) => (
-        <ProductCard 
-          key={product.id} 
-          id={product.id} 
-          name={product.name} 
-          price={product.price} 
+        <ProductImage 
+          {...product}
         />
       ))}
     </div>
