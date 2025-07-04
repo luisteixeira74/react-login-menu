@@ -22,7 +22,7 @@ export function Header() {
       {/* Menu de links alinhados verticalmente ao centro */}
       <nav className="flex items-center space-x-10 text-white text-[24px] font-inter">
         <Link to="/shopping" className="hover:text-gray-300 transition-colors cursor-pointer">
-            MEN
+            SHOPPING
         </Link>
 
         <SearchInput />
